@@ -58,9 +58,9 @@ $secondary-col:rgb(122, 121, 121);
         .title{
             font-size: 2rem;
             color: $primary-col;
-            display: flex;
-            justify-content: center;
-            padding-bottom: 20px;
+             display: block;
+            // justify-content: center;
+            padding-bottom: 25px;
         }
         .body{
             font-size: 1rem;

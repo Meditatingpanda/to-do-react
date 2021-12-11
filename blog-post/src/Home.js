@@ -3,19 +3,19 @@ import Blogcontent from "./listComponent";
 const Home = () => {
   let [blog, setBlog] = useState([
     {
-      title: "my new website",
+      title: "My new website",
       author:'gyana',
       body: "xcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
       id: 1
     },
     {
-      title: "welcome aborad",
+      title: "Welcome aborad",
       author:'Nihar',
       body: "xcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
       id: 2
     },
     {
-      title: "web dev ",
+      title: "Web dev ",
       
       author:'gyana',
       body: "xcepteur essxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore desere adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
