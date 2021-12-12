@@ -17,6 +17,7 @@ $secondary-col:rgb(122, 121, 121);
     h1{
         color: $primary-col;
         font-size: 3rem;
+        padding-left: 1rem;
     }
     .links{
         display: flex;
@@ -40,12 +41,16 @@ $secondary-col:rgb(122, 121, 121);
        // border: 2px solid black;
        position: relative;
        padding: 20px;
+       .deleteBox{
+           display: flex;
+           justify-content: space-between;
+       }
        .btn{
-          position: absolute;
-          top: 20%;
-          right: 5%;
           font-size: 1rem;
+          height: 1.8rem;
           border: none;
+          display: flex;
+          align-items: center;
           padding: 7px;
           border-radius: 4px;
           background-color: $primary-col;
@@ -84,12 +89,15 @@ $secondary-col:rgb(122, 121, 121);
 }
 @media (max-width: 645px) {
     html{
-        font-size: 70%;
+        font-size: 75%;
     }
  }
  @media (max-width: 550px) {
     html{
-        font-size: 40%;
+        font-size: 68%;
+    }
+    .content{
+        width: 90%;
     }
  }
  
