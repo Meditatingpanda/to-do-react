@@ -5,13 +5,9 @@
 }
 $primary-col: rgb(240, 121, 141);
 $secondary-col:rgb(122, 121, 121);
-.content{
-    width: 70%;
-    margin: auto;
-}
 .navbar{
-    margin-top: 3rem;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    //margin-top: 3rem;
+    //box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     display: flex;
     margin-bottom: 2rem;
     h1{
@@ -86,18 +82,27 @@ $secondary-col:rgb(122, 121, 121);
    html{
        font-size: 80%;
    }
+  
+   .content-box{
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+   }
 }
 @media (max-width: 645px) {
     html{
         font-size: 75%;
     }
+   
+    .content-box{
+        box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+       }
  }
  @media (max-width: 550px) {
     html{
         font-size: 68%;
     }
-    .content{
-        width: 90%;
-    }
+
+    .content-box{
+        box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+       }
  }
  
