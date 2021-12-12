@@ -1,41 +1,36 @@
 import { useState,useEffect } from "react";
 import Blogcontent from "./listComponent";
+import firebase from "firebase";
+import { db } from "./firebase_config";
 const Home = () => {
-  let [blog, setBlog] = useState([
-    {
-      title: "My new website",
-      author:'gyana',
-      body: "xcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
-      id: 1
-    },
-    {
-      title: "Welcome aborad",
-      author:'Nihar',
-      body: "xcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
-      id: 2
-    },
-    {
-      title: "Web dev ",
-      
-      author:'gyana',
-      body: "xcepteur essxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deserxcepteur esse adipisicing cupidatat amet laboris sit fugiat excepteur ea labore desere adipisicing cupidatat amet laboris sit fugiat excepteur ea labore deser",
-      id: 3
-    },
-  ]);
-  
+  let [blog, setBlog] = useState([]);
+  const [isPending,setIsPending]=useState(true);
+  const [errorShow,SetError]=useState(null);
   const handleDelete=(key)=>{
       let newBlog=blog.filter((temp)=>temp.id!==key);
       console.log(newBlog);
       setBlog(newBlog);
   }
   useEffect(()=>{
-      console.log('dom rendered');
-  });
-  return <div className="home">
-      {
-         <Blogcontent blog={blog} handleDelete={handleDelete}/>
-      }
-  </div>;
-};
+       db.collection("confessionpage").onSnapshot((query)=>{
+          setBlog( query.docs.map((doc)=>({
+            id:doc.id,
+            title:doc.data().title,
+            author:doc.data().author,
+            body:doc.data().body
+        })))
+       })
+            
+  },[]);
+     
+  return ( <div className="home">
+      
+     
+        <Blogcontent blog={blog} />
+      
+      
+   </div>
+  )
+    };   
 
 export default Home;
