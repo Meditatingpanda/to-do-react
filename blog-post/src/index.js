@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+import {Helmet} from 'react-helmet';
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <Helmet>
+      <meta name="google-site-verification" content="7_9zevZVj3YaFrHmH7-q-0IkPKnXP6c7ZOhlXg0byIg" />
+      
+     <title>Confession Page</title>
+    </Helmet>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
