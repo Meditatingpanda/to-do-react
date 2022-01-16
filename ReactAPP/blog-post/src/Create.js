@@ -4,6 +4,28 @@ import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
 import firebase from "firebase";
+import { withStyles } from "@material-ui/core";
+const CssTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: 'white',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'yellow',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'white',
+      },
+      '&:hover fieldset': {
+        borderColor: 'white',
+      },
+      '&.Mui fieldset': {
+        borderColor: 'yellow',
+      },
+    },
+  },
+})(TextField);
 
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
@@ -11,8 +33,8 @@ const CreateBlog = () => {
   const [author, setAuthor] = useState("");
   const submitvalue = (e) => {
     e.preventDefault();
-    if (title.length === 0 || body.length === 0) {
-      window.alert("OOPS You Entered Nothing");
+    if (title.length === 0 || body.length === 0 || author.length===0) {
+      window.alert("OOPS!! You Entered Nothing");
     } else {
       db.collection("confessionpage").add({
         title: title,
@@ -26,29 +48,33 @@ const CreateBlog = () => {
     <div className="createNew">
       <form>
         <h2>What are you expecting from us?</h2>
-        <TextField
+        <CssTextField
           id="standard-basic"
           label="Title"
           variant="standard"
+          InputLabelProps={{className:'inputF'}}
+          InputProps={{color:'primary'}}
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         />
 
-        <TextField
+        <CssTextField
           id="standard-textarea"
-          label="Your Confession"
+          label="Your Expectations"
           multiline
           variant="standard"
+          InputLabelProps={{className:'inputF'}}
           onChange={(e) => {
             setBody(e.target.value);
           }}
         />
 
-        <TextField
+        <CssTextField
           id="standard-basic"
           label="Your Name"
           variant="standard"
+          InputLabelProps={{className:'inputF'}}
           onChange={(e) => {
             setAuthor(e.target.value);
           }}

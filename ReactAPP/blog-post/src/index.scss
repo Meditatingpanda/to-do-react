@@ -1,25 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-$primary-col: rgb(240, 121, 141);
-$secondary-col: rgb(122, 121, 121);
+// $primary-col: rgb(240, 121, 141);
+// $secondary-col: rgb(122, 121, 121);
+$primary-col: white;
+$secondary-col: white;
 
 .navbar {
   display: flex;
+  position: relative;
+  backdrop-filter: blur(20px);
   margin-bottom: 2rem;
-  .brand{
-   
+  .brand {
     display: flex;
-    img{
+    img {
       width: 4.2rem;
     }
   }
-  // 
+  //
   height: 5rem;
   h1 {
-    color: #239c32;
+    color: #28b338;
     font-size: 2.4rem;
     //padding-left: 1rem;
     display: flex;
@@ -35,26 +40,31 @@ $secondary-col: rgb(122, 121, 121);
       color: $secondary-col;
     }
     a:hover {
-      color: $primary-col;
+      color: red;
       transition: 0.2s;
     }
+    
     margin-left: auto;
   }
 }
 .home {
   height: 30rem;
-   .allBlogs{
-     margin: auto;
-     width: 95%;
-   }
-  
+  .allBlogs {
+    margin: auto;
+    width: 95%;
+  }
+
   .content-box {
     margin: 1rem;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
     position: relative;
-   
+
     padding: 20px;
-    
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
     .btn {
       font-size: 1rem;
       height: 1.8rem;
@@ -75,22 +85,18 @@ $secondary-col: rgb(122, 121, 121);
       color: $primary-col;
       display: block;
       padding-bottom: 25px;
+      text-align: center;
     }
     .body {
-      font-size: 1em;
+      font-size: 1.1em;
       color: $secondary-col;
     }
     h6 {
       margin-top: 10px;
       color: $secondary-col;
       text-align: right;
+      font-size: 0.9rem;
     }
-  }
-  .loader {
-    display: flex;
-    justify-content: center;
-    font-size: 1.9rem;
-    color: $primary-col;
   }
 }
 @media (max-width: 768px) {
@@ -133,33 +139,45 @@ $secondary-col: rgb(122, 121, 121);
 
   h2 {
     text-align: center;
+    position: relative;
   }
-  
-  form{
+
+  form {
     width: 85%;
     height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
-     padding: 2rem;
-     #standard-basic,#standard-textarea{
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    #standard-basic,
+    #standard-textarea {
       width: 25rem;
+      color: white !important;
     }
-    .btn{
+    .btn {
       background-color: $primary-col;
       margin-top: 2rem;
     }
-    .btn:hover{
-      background-color: black;
+    .btn:hover {
+      background-color: red;
       color: $primary-col;
       transition: 0.8s;
-      a{
+      a {
         color: $primary-col;
       }
     }
-    a{
+    a {
       text-decoration: none;
       color: black;
     }
   }
+}
+
+.inputF {
+  color: white !important;
+  font-size: 1.2rem !important;
 }
