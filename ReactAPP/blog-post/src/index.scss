@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 // $primary-col: rgb(240, 121, 141);
 // $secondary-col: rgb(122, 121, 121);
@@ -43,28 +43,42 @@ $secondary-col: white;
       color: red;
       transition: 0.2s;
     }
-    
+
     margin-left: auto;
   }
 }
 .home {
   height: 30rem;
+  h1{
+    position: relative;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
   .allBlogs {
     margin: auto;
+    //display: flex;
+   // flex-wrap: wrap;
     width: 95%;
   }
 
   .content-box {
-    margin: 1rem;
+   // width: 100%;
+   // margin: 1rem;
+  // min-width: 300px;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
     position: relative;
-
+    //max-width: 30rem;
+    // background-image: url(https://clipart.info/images/ccovers/1623700978among-us-red-fire.png);
     padding: 20px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    background-size: cover;
+    //flex-grow: 1;
 
+    height: min-content;
     .btn {
       font-size: 1rem;
       height: 1.8rem;
@@ -82,7 +96,7 @@ $secondary-col: white;
     }
     .title {
       font-size: 2em;
-      color: $primary-col;
+      color: black;
       display: block;
       padding-bottom: 25px;
       text-align: center;
@@ -180,4 +194,26 @@ $secondary-col: white;
 .inputF {
   color: white !important;
   font-size: 1.2rem !important;
+}
+
+
+
+
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  //background: grey;
+  margin-bottom: 30px;
 }

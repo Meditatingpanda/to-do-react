@@ -1,6 +1,18 @@
+import Masonry from "react-masonry-css";
 const Blogcontent = ({ blog }) => {
+  let brakePoints = {
+    
+    default: 3,
+    700: 2,
+    500: 1
+  };
   return (
     <div className="allBlogs">
+     <Masonry
+       breakpointCols={brakePoints}
+       className="my-masonry-grid"
+       columnClassName="my-masonry-grid_column"
+     >
       {blog.map((key) => {
         return (
           <div className="content-box" key={key.id}>
@@ -11,13 +23,17 @@ const Blogcontent = ({ blog }) => {
               </span>
             </div>
             <p className="body">{key.body}</p>
+            
             <h6>Name: {key.author} </h6>
-            {/* <h6>{key.timestamp.toDate().toDateString()}</h6> */}
+           
             
           </div>
         );
       })}
+    </Masonry>
     </div>
+    
+    
   );
 };
 

@@ -1,7 +1,7 @@
-import Navbar from './navbar';
-import Home from './Home';
+import Navbar from './components/navbar';
+import Home from './pages/Home';
 import {BrowserRouter as Router,Route, Routes } from 'react-router-dom';
-import CreateBlog from './Create';
+import CreateBlog from './pages/CreateForm';
 import Particles from 'react-tsparticles';
 import {configValue} from './ParticleJs/config'
 
@@ -25,7 +25,7 @@ function App() {
       init={particlesInit}
       loaded={particlesLoaded}
       options={configValue}></Particles>
-    <Router>
+    <Router >
     <div className="App">
       <div className="content">
       
